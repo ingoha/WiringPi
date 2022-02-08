@@ -748,7 +748,6 @@ int piGpioLayout (void)
 {
   FILE *cpuFd ;
   char line [120] ;
-  char *c ;
   static int  gpioLayout = -1 ;
 
   if (gpioLayout != -1)	// No point checking twice
@@ -902,8 +901,8 @@ void piBoardId (int *model, int *rev, int *mem, int *maker, int *warranty)
 
   fclose (cpuFd) ;
 
-  if (strncmp (line, "Revision", 8) != 0)
-    piGpioLayoutOops ("No \"Revision\" line") ;
+  //if (strncmp (line, "Revision", 8) != 0)
+  //  piGpioLayoutOops ("No \"Revision\" line") ;
 
 // Chomp trailing CR/NL
 
